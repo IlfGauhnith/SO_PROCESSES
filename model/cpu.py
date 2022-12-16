@@ -1,4 +1,7 @@
-from model.Process import Process
+from datetime import datetime
+
+from logger import Logger
+from model.process import Process
 
 
 class CPU:
@@ -14,3 +17,4 @@ class CPU:
         self.reg2 = process.hardware_context.reg2
         self.reg3 = process.hardware_context.reg3
         self.pc = process.hardware_context.pc
+        Logger.log(datetime.now(), process, "Contexto inicializado na CPU")
