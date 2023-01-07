@@ -48,3 +48,21 @@ class InputHandler:
             return Type.IO_BOUND
         else:
             return Type.CPU_BOUND
+
+    @staticmethod
+    def bool_input(msg):
+        while True:
+            try:
+                user_input = input(msg).upper()
+
+                if user_input not in ('SIM', 'NAO', 'S', 'N'):
+                    raise ValueError()
+
+                break
+            except ValueError:
+                print("Entrada inválida.\n")
+
+        if user_input == 'SIM' or user_input == 'S':
+            return True
+        else:
+            return False
