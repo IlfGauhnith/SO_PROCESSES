@@ -11,8 +11,6 @@ from input_handler import InputHandler
 def run_dev_mode(scheduler, dispatcher):
     file = open('mock.txt', 'r')
     mocked_processes = file.readline().split(';')
-    dispatcher.preemptive = False
-    scheduler.scheduling_algorithm = SchedulingAlgorithm.SHORTEST_JOB_FIRST
 
     for process in mocked_processes:
         process = process.split(',')
